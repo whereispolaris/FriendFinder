@@ -11,9 +11,15 @@ module.exports = function (app) {
         res.sendFile(path.join(__dirname + '../../public/survey.html'));
     });
 
-    // homepage or any other page
-    app.use(function (req, res) {
+    // TEMPORARY SOLUTION
+    app.get('/', function (req, res) {
         res.sendFile(path.join(__dirname + '../../public/home.html'));
     });
+
+    // THIS IS NOT WORKING 
+    // homepage or any other page
+    // app.use(function (req, res) {
+    //     res.sendFile(path.join(__dirname + '../public/home.html'));
+    // });
 
 }
