@@ -22,16 +22,31 @@
 
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
-            <h1 class="display-4"><span id="ff-logo">FF</span>Friend Finder!</h1>
+            <h1 class="display-4"><a href="/"><span id="ff-logo">FF</span></a>Friend Finder!</h1>
             <hr>
             <p class="lead">Answer a few basic questions.
                 Then find the friend with the greatest compatibility!
             </p>
-            <a href="/survey" class="btn btn-danger btn-lg active" role="button" aria-pressed="true">FIND ME A MATCH</a>
+            <a href="/survey" class="btn btn-danger btn-lg active" role="button" aria-pressed="true">FIND ME
+                A MATCH</a>
 
         </div>
 
     </div>
+
+    <footer>
+        <div class="container">
+            <ul class="nav">
+                <li class="nav-item">
+                    <a class="nav-link active" href="/api/friends">API Friends List</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://github.com/whereispolaris/FriendFinder"> GitHub Repo</a>
+                </li>
+            </ul>
+        </div>
+        <hr>
+    </footer>
 
     <!-- Optional JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
@@ -48,6 +63,7 @@
             background: black;
             color: white;
             border-radius: 3px;
+            text-decoration: none;
         }
     </style>
 </body>
