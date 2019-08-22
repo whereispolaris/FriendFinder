@@ -169,7 +169,7 @@
 
     <!-- Optional JavaScript -->
     <script>
-        $(".submit").on("click", function () {
+        $(".submit").on("click", () => {
             const newFriendSubmission = {
                 "name": $("#name").val().trim(),
                 "photo": $("#photo").val().trim(),
@@ -186,15 +186,10 @@
                     $("#question-10 option:selected").val(),
                 ]
             }
-
             const currentURL = window.location.origin;
-
             $.post(`${currentURL}/api/friends`, newFriendSubmission, (data) => {
-                console.log(`WTF is ${data}`)
+                console.log(`Post successful: ${data}`)
             });
-            $("#name").val("");
-            $("#photo").val("");
-            $("#question-1 option:selected").val(1);
             // prevent default
             return false;
         });
