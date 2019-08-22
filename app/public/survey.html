@@ -13,9 +13,20 @@
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-
-    <link rel="stylesheet" href="style.css">
     <title>Friend Finder!</title>
+    <style>
+        #ff-logo {
+            padding: 5px;
+            margin: 10px;
+            background: black;
+            color: white;
+            border-radius: 3px;
+        }
+
+        form {
+            margin-bottom: 50px;
+        }
+    </style>
 </head>
 
 <body>
@@ -100,7 +111,7 @@
             </div>
             <div class="form-group">
                 <label for="question-7">I conceal my feelings.</label>
-                <select class="form-control" id="question-6">
+                <select class="form-control" id="question-7">
                     <option value="1">1(Strongly Disagree)</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -130,15 +141,15 @@
             </div>
             <div class="form-group">
                 <label for="question-10">I like meeting new people.</label>
-                <select class="form-control" id="question-1">
-                    <option value="1">1(Strongly Disagree)</option>
+                <select class="form-control" id="question-10">
+                    <option value="10">1(Strongly Disagree)</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
                     <option value="4">4</option>
                     <option value="5">5(Strongly Agree)</option>
                 </select>
             </div>
-            <button type="submit" class="btn btn-dark">Submit</button>
+            <button type="submit" class="btn btn-dark submit">Submit</button>
         </form>
     </div>
     <hr>
@@ -158,7 +169,18 @@
 
     <!-- Optional JavaScript -->
     <script>
+        $(".submit").on("click", function () {
+            console.log("Form submitted");
+            console.log($("#name").val().trim());
+            console.log($("#photo").val().trim());
+            var newFriendSubmission = {
 
+            }
+            // console.log($("#question-9 option:selected").val());
+
+            // prevent default
+            return false;
+        });
 
 
     // Determine the user's most compatible friend using the following as a guide:
@@ -175,8 +197,8 @@
 
     // The modal should display both the name and picture of the closest match.
 
-
     </script>
+
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
         integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
@@ -185,19 +207,7 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
 
-    <style>
-        #ff-logo {
-            padding: 5px;
-            margin: 10px;
-            background: black;
-            color: white;
-            border-radius: 3px;
-        }
 
-        form {
-            margin-bottom: 50px;
-        }
-    </style>
 </body>
 
 </html>
