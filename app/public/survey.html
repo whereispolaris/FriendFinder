@@ -169,6 +169,7 @@
 
     <!-- Optional JavaScript -->
     <script>
+        jQuery.ajaxSettings.traditional = true;
         $(".submit").on("click", () => {
             const newFriendSubmission = {
                 "name": $("#name").val().trim(),
@@ -188,7 +189,7 @@
             }
             const currentURL = window.location.origin;
             $.post(`${currentURL}/api/friends`, newFriendSubmission, (data) => {
-                console.log(`Post successful: ${data}`)
+                console.log(`Post successful: ${data}`)             // 
             });
             // prevent default
             return false;
