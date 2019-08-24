@@ -166,6 +166,26 @@
         </div>
         <hr>
     </footer>
+
+    <!-- Modal Popup -->
+    <div class="modal fade" id="newModal" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">We Found Your Match!</h4>
+                    <button type="button" class="close" data-dismiss="modal">×</button>
+
+                </div>
+                <div class="modal-body">
+                    <p>Your Match Is:</p>
+                    <p id="matchName">TEST</p>
+                    <img src="https://picsum.photos/id/200/300/300" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
     <!-- Optional JavaScript -->
     <script>
         jQuery.ajaxSettings.traditional = true;
@@ -216,6 +236,7 @@
                         }
                     }
                     console.log(match);
+                    $("#newModal").modal("show");
                 });
             });
             // prevent default
