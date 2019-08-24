@@ -166,7 +166,7 @@
         </div>
         <hr>
     </footer>
-
+    app/data/friend.js
     <!-- Optional JavaScript -->
     <script>
         jQuery.ajaxSettings.traditional = true;
@@ -189,7 +189,19 @@
             }
             const currentURL = window.location.origin;
             $.post(`${currentURL}/api/friends`, newFriendSubmission, (data) => {
-                console.log(`Post successful: ${data}`)             // 
+                console.log(`Post successful: ${data}`);
+                $.ajax({
+                    url: `${currentURL}/api/friends`,
+                    method: "GET"
+                }).then(function (response) {
+                    console.log(response);
+                    const currentUser = response[response.length - 1];
+                    console.log(`The current user is ${currentUser}`);
+                    for (let i = 0; i < response.length - 1; i++) {
+                        console.log(response[i].name);
+
+                    }
+                });
             });
             // prevent default
             return false;
@@ -219,8 +231,6 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
-
-
 </body>
 
 </html>
