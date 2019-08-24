@@ -204,7 +204,17 @@
                     let currentUserScore = currentUser.scores;
                     let scoresResult = 0;
 
-
+                    for (let i = 0; i < response.length - 1; i++) {
+                        scoresResult = 0;
+                        for (let n = 0; n < response[i].scores[n]; n++) {
+                            scoresResult += Math.abs(currentUserScore[n] - response[i].scores[n]);
+                            if (scoresResult <= match.scoreDifference) {
+                                match.name = response[i].name;
+                                match.photo = response[i].photo;
+                                match.scoreDifference = scoresResult;
+                            }
+                        }
+                    }
                     console.log(match);
                 });
             });
