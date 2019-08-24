@@ -166,7 +166,6 @@
         </div>
         <hr>
     </footer>
-    app/data/friend.js
     <!-- Optional JavaScript -->
     <script>
         jQuery.ajaxSettings.traditional = true;
@@ -194,13 +193,19 @@
                     url: `${currentURL}/api/friends`,
                     method: "GET"
                 }).then(function (response) {
-                    console.log(response);
-                    const currentUser = response[response.length - 1];
-                    console.log(`The current user is ${currentUser}`);
-                    for (let i = 0; i < response.length - 1; i++) {
-                        console.log(response[i].name);
 
+                    let match = {
+                        "name": "",
+                        "photo": "",
+                        "scoreDifference": 0
                     }
+
+                    const currentUser = response[response.length - 1];
+                    let currentUserScore = currentUser.scores;
+                    let scoresResult = 0;
+
+
+                    console.log(match);
                 });
             });
             // prevent default
