@@ -178,8 +178,8 @@
                 </div>
                 <div class="modal-body">
                     <p>Your Match Is:</p>
-                    <p id="matchName">TEST</p>
-                    <img src="https://picsum.photos/id/200/300/300" alt="">
+                    <p id="matchName"></p>
+                    <div id="matchPhoto" class="text-center"></div>
                 </div>
             </div>
         </div>
@@ -236,7 +236,25 @@
                         }
                     }
                     console.log(match);
+
+                    const matchImage = $("<img>");
+                    matchImage.attr({
+                        "src": match.photo,
+                        "class": "rounded img-fluid"
+                    });
+                    $("#matchName").append(match.name);
+                    $("#matchPhoto").append(matchImage);
+
                     $("#newModal").modal("show");
+
+                    $('#newModal').on('hidden.bs.modal', function (e) {
+                        console.log("Modal closed");
+                        $("#matchName").empty();
+                        $("#matchPhoto").empty();
+                        console.log(match);
+                    })
+
+
                 });
             });
             // prevent default

@@ -19,7 +19,7 @@ friendData = [
         ]
     },
     {
-        "name": "Anthony ",
+        "name": "Anthony Burger",
         "photo": "https://images.pexels.com/photos/555790/pexels-photo-555790.png?auto=compress&cs=tinysrgb&dpr=1&w=300",
         "scores": [
             3,
